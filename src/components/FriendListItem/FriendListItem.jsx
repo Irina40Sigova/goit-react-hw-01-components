@@ -5,11 +5,7 @@ import { Img, Item, Name, Status } from './FriendListItem.styled';
 export const FriendListItem = ({ isOnline, avatar, name }) => {
   return (
     <Item>
-      {isOnline ? (
-        <Status style={{ backgroundColor: 'red' }}></Status>
-      ) : (
-        <Status style={{ backgroundColor: 'green' }}></Status>
-      )}
+      <Status isOnline={isOnline} />
       <Img src={avatar} alt="User avatar" width="48" />
       <Name>{name}</Name>
     </Item>
@@ -17,7 +13,7 @@ export const FriendListItem = ({ isOnline, avatar, name }) => {
 };
 
 FriendListItem.propTypes = {
-  status: PropTypes.bool,
-  avatar: PropTypes.string,
-  name: PropTypes.string,
+  status: PropTypes.bool.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

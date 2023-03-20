@@ -13,7 +13,7 @@ export const FriendList = ({ friends }) => {
             isOnline={isOnline}
             avatar={avatar}
             name={name}
-          ></FriendListItem>
+          />
         );
       })}
     </FriendListBox>
@@ -21,5 +21,11 @@ export const FriendList = ({ friends }) => {
 };
 
 FriendList.propTypes = {
-  friends: PropTypes.array,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };

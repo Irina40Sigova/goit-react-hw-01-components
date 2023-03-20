@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import getRandomHexColor from './getRandomHexColor';
 
 export const StatisticsBox = styled.section`
   margin: 24px auto;
@@ -25,6 +26,8 @@ export const Item = styled.li`
   justify-items: center;
   width: 128px;
   padding: 6px;
+  background-color: ${getRandomHexColor};
+
   :first-of-type {
     border-radius: 12px 0 0 12px;
   }
@@ -36,7 +39,7 @@ export const Item = styled.li`
 export const Label = styled.span`
   font-weight: 400;
   font-size: 16px;
-  color: #ffffff;
+  color: #000000;
 `;
 
 export const Percentage = styled.span`
